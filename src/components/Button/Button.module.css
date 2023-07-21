@@ -1,0 +1,22 @@
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue);
+    border: none;
+    width: 90px;
+    height: 54px;
+    border-radius: 8px;
+    color: var(--gray-100);
+    gap: 4px;
+    padding: 16px;
+    transition: .2s;
+}
+
+.button:hover{
+    background-color: var(--blue-dark);
+}
+
+.button:active{
+    background-color: var(--blue);
+}

@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home{
+    margin-top: -27px;
+    width: 46rem;
+    display: flex;
+    gap: 8px;
+}
+
+@media (max-width: 768px){
+    html {
+        font-size: 87.5%;
+    }
+
+    .home {
+        width: 80%;
+    }
+}
