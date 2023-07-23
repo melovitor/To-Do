@@ -1,0 +1,30 @@
+.wrapper {
+    margin-top: 1.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;
+}
+
+.empty{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1.4;
+    color: var(--gray-300);
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 1rem;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 16px;
+}

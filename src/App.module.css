@@ -5,10 +5,14 @@
     align-items: center;
 }
 
+.container{
+    width: 46rem;
+}
+
 .home{
     margin-top: -27px;
-    width: 46rem;
     display: flex;
+    width: 100%;
     gap: 8px;
 }
 

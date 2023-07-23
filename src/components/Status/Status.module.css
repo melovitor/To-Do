@@ -1,0 +1,31 @@
+.wrapper {
+    margin-top: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.created  {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--blue);
+}
+
+.conclued {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--pourple);
+}
+
+.dot {
+    display: flex;
+    background: var(--gray-400);
+    padding: 2px 8px;
+    border-radius: 999px;
+    color: var(--gray-200);
+}
