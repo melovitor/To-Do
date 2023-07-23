@@ -11,7 +11,7 @@ export function Task(){
                 <div className={styles.checked}>
                     <Check/>
                 </div>
-                <p>Integer urna interdum massa libero auctor neque turpis turpis semper.</p>
+                <p className={styles.done}>Integer urna interdum massa libero auctor neque turpis turpis semper.</p>
             </div>
             <div  className={styles.trash}>
                 <Trash size={20}/>

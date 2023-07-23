@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--blue);
+    background-color: var(--blue-dark);
     border: none;
     width: 90px;
     height: 54px;
@@ -14,9 +14,9 @@
 }
 
 .button:hover{
-    background-color: var(--blue-dark);
+    background-color:  var(--blue);
 }
 
 .button:active{
-    background-color: var(--blue);
+    background-color: var(--blue-dark);
 }

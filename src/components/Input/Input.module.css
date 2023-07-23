@@ -7,3 +7,8 @@
     padding: 16px;
     color: var(--gray-100);
 }
+
+.input:focus {
+    outline: transparent;
+    box-shadow: 0 0 0 2px var(--purple-dark);
+}
