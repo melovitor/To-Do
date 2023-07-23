@@ -12,10 +12,10 @@ export default function App() {
     <div className={styles.wrapper}>
         <Header/>
       <div className={styles.container}>
-        <div className={styles.home}>
+        <form className={styles.home}>
           <Input placeholder='Adicione uma nova tarefa'/>
-          <Button/>
-        </div>
+          <Button type='submit' />
+        </form>
           <Status/>
           <Tasks/>
       </div>
