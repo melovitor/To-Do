@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    color: var(--pourple);
+    color: var(--purple);
 }
 
 .dot {
