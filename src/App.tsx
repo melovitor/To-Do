@@ -19,7 +19,7 @@ export default function App() {
   
   const [newTask, setNewTask] = useState('')
   const [allTaskObj, setAllTaskObj] = useState<TasksProps[]>(storedTasks !== null ? JSON.parse(storedTasks) : [])
-  const [tasksCompleted, setTasksCompleted] = useState( JSON.parse(storedTasksCounter))  
+  const [tasksCompleted, setTasksCompleted] = useState(JSON.parse(storedTasksCounter === null ? 0 : storedTasksCounter))  
 
   function handleCreateNewTask(event: FormEvent){
     event.preventDefault()
