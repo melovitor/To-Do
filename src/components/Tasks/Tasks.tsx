@@ -1,14 +1,15 @@
 import styles from './Tasks.module.css' 
 import  Clipboard  from '../../assets/Clipboard.svg'
 import { Task } from '../Task/Task'
-import { useState } from 'react'
 
 interface TasksProps {
-    newTask: any
+    newTask: any,
+    onDeleteTask: (id:number) => void
 }
 
 
-export function Tasks({newTask}:TasksProps){
+export function Tasks({newTask, onDeleteTask}:TasksProps){
+
 
     return(
         <div className={styles.wrapper}>
@@ -19,6 +20,7 @@ export function Tasks({newTask}:TasksProps){
                         id={task.id}
                         content={task.content}
                         done={task.done}
+                        onDeleteTask={(id) => {onDeleteTask(id)}}
                     />
             }) 
             : 

@@ -5,10 +5,11 @@ interface TaskProps {
     id: number;
     content: string;
     done: boolean
+    onDeleteTask: (id:number) => void
 }
 
 
-export function Task({id, content, done}: TaskProps){ 
+export function Task({id, content, done, onDeleteTask}: TaskProps){ 
     return(
         <div className={styles.wrapper}>
             <div className={styles.container}>
@@ -17,7 +18,7 @@ export function Task({id, content, done}: TaskProps){
                 </div>
                 <p className={done === true ? styles.done : ''}>{content}</p>
             </div>
-            <div  className={styles.trash}>
+            <div  className={styles.trash} onClick={() => onDeleteTask(id)}>
                 <Trash size={20}/>
             </div>
         </div>

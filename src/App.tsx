@@ -28,6 +28,14 @@ export default function App() {
     setNewTask('')
   }
 
+  function deleteTask(taskId:number) {
+    console.log(`Deletando a task: ${taskId}`)
+    const tasksWithoutDeletedOne = allTaskObj.filter(task => {
+      return task.id !== taskId
+    })
+    setAllTaskObj(tasksWithoutDeletedOne)
+  }
+
   return (
     <div className={styles.wrapper}>
         <Header/>
@@ -49,8 +57,7 @@ export default function App() {
           />
         </form>
           <Status created={allTaskObj.length} completed={0}/>
-          <Tasks newTask={allTaskObj}
-          />
+          <Tasks newTask={allTaskObj} onDeleteTask={deleteTask}/>
       </div>
     </div>
   )
