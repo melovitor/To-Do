@@ -10,5 +10,5 @@ Projeto de front-end desenvolvido por meio do primeiro desafio da trilha de Reac
 - React.js
 - Css
 - Vite  
--localStorage
+- localStorage
 - Git e Github
