@@ -37,6 +37,7 @@ export default function App() {
     const tasksWithoutDeletedOne = allTaskObj.filter(task => {
       return task.id !== taskId
     })
+    countCompletedTask(tasksWithoutDeletedOne)
     setAllTaskObj(tasksWithoutDeletedOne)
     localStorage.setItem("todolist", JSON.stringify(tasksWithoutDeletedOne))
   }
@@ -54,9 +55,9 @@ export default function App() {
     localStorage.setItem("todolist", JSON.stringify(completedTaskById))
   }
 
-  function countCompletedTask(completedTaskById: any){
+  function countCompletedTask(tasks: any){
     let count = 0 
-    completedTaskById.map((task:any) => {
+    tasks.map((task:any) => {
       if (task.done === true) {
         count++;
       }
