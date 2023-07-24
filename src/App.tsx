@@ -14,6 +14,7 @@ interface TasksProps {
 }
 
 export default function App() {
+  localStorage.removeItem("todolistcounter");
   const storedTasks:any = localStorage.getItem("todolist");
   const storedTasksCounter:any = localStorage.getItem("todolistcounter");
   
