@@ -1,18 +1,23 @@
 import styles from './Status.module.css'
 
-export function Status(){
+interface StatusProps {
+    created: number
+    completed: number
+}
+
+export function Status({created, completed}: StatusProps){
     return (
         <div className={styles.wrapper}>
             <div className={styles.created}>
                 <p>Tarefas criadas</p>
                 <div className={styles.dot}>
-                    5
+                    {created}
                 </div>
             </div>
             <div className={styles.conclued}>
                 <p>Concluídas</p>
                 <div className={styles.dot}>
-                    2 de 5
+                    {completed} de {created}
                 </div>
             </div>
         </div>

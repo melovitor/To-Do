@@ -1,26 +1,19 @@
 import styles from './Tasks.module.css' 
 import  Clipboard  from '../../assets/Clipboard.svg'
 import { Task } from '../Task/Task'
+import { useState } from 'react'
 
-const taskList = [
-    {
-        id: 1,
-        content: 'Integer urna interdum massa libero auctor neque turpis turpis semper.',
-        done: true
-    },
-    {
-        id: 2,
-        content: 'Integer urna interdum massa libero auctor neque turpis turpis semper.',
-        done: false
-    },
-]
+interface TasksProps {
+    newTask: any
+}
 
 
-export function Tasks(){
+export function Tasks({newTask}:TasksProps){
+
     return(
         <div className={styles.wrapper}>
-            { taskList.length > 0 ? 
-                taskList.map( task => {
+            { newTask.length > 0 ? 
+                newTask.map( (task: { id: number; content: string; done: boolean }) => {
                     return <Task
                         key={task.id}
                         id={task.id}
