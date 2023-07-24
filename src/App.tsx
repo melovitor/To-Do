@@ -14,12 +14,12 @@ interface TasksProps {
 }
 
 export default function App() {
-  const local:any = localStorage.getItem("todolist");
-  const [newTask, setNewTask] = useState('')
-  const [allTaskObj, setAllTaskObj] = useState<TasksProps[]>(local !== null ? JSON.parse(local) : [])
-  const [tasksCompleted, setTasksCompleted] = useState(0)
-
+  const storedTasks:any = localStorage.getItem("todolist");
+  const storedTasksCounter:any = localStorage.getItem("todolistcounter");
   
+  const [newTask, setNewTask] = useState('')
+  const [allTaskObj, setAllTaskObj] = useState<TasksProps[]>(storedTasks !== null ? JSON.parse(storedTasks) : [])
+  const [tasksCompleted, setTasksCompleted] = useState( JSON.parse(storedTasksCounter))  
 
   function handleCreateNewTask(event: FormEvent){
     event.preventDefault()
@@ -62,6 +62,7 @@ export default function App() {
       }
     })
     setTasksCompleted(count)
+    localStorage.setItem("todolistcounter", JSON.stringify(count))
   }
 
   return (
