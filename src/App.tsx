@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, InvalidEvent, useState, useEffect } from 'react'
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
 import { Header } from './components/Header/Header'
 import { Input } from './components/Input/Input'
 import styles from './App.module.css'
