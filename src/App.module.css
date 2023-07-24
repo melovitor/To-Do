@@ -16,6 +16,19 @@
     gap: 8px;
 }
 
+body::-webkit-scrollbar {
+    width: 2px; 
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--blue-dark); 
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--purple);    
+    border-radius: 20px;     
+  }
+
 @media (max-width: 768px){
     html {
         font-size: 87.5%;
