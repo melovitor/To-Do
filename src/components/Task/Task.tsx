@@ -6,14 +6,15 @@ interface TaskProps {
     content: string;
     done: boolean
     onDeleteTask: (id:number) => void
+    onCompleted: (id:number) => void
 }
 
 
-export function Task({id, content, done, onDeleteTask}: TaskProps){ 
+export function Task({id, content, done, onDeleteTask, onCompleted}: TaskProps){ 
     return(
         <div className={styles.wrapper}>
             <div className={styles.container}>
-                <div className={done === true ? styles.checked : styles.unchecked}>
+                <div className={done === true ? styles.checked : styles.unchecked} onClick={() => onCompleted(id)}>
                     <Check/>
                 </div>
                 <p className={done === true ? styles.done : ''}>{content}</p>

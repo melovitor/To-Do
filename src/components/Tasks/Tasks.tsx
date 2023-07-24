@@ -5,10 +5,11 @@ import { Task } from '../Task/Task'
 interface TasksProps {
     newTask: any,
     onDeleteTask: (id:number) => void
+    onCompleted: (id:number) => void
 }
 
 
-export function Tasks({newTask, onDeleteTask}:TasksProps){
+export function Tasks({newTask, onDeleteTask, onCompleted}:TasksProps){
 
 
     return(
@@ -21,6 +22,8 @@ export function Tasks({newTask, onDeleteTask}:TasksProps){
                         content={task.content}
                         done={task.done}
                         onDeleteTask={(id) => {onDeleteTask(id)}}
+                        onCompleted={(id) => {onCompleted(id)}}
+
                     />
             }) 
             : 

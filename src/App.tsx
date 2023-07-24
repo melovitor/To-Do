@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, InvalidEvent, useState, useEffect } from 'react'
 import { Header } from './components/Header/Header'
 import { Input } from './components/Input/Input'
 import styles from './App.module.css'
@@ -16,6 +16,7 @@ interface TasksProps {
 export default function App() {
   const [newTask, setNewTask] = useState('')
   const [allTaskObj, setAllTaskObj] = useState<TasksProps[]>([])
+  const [tasksCompleted, setTasksCompleted] = useState(0)
 
   function handleCreateNewTask(event: FormEvent){
     event.preventDefault()
@@ -29,11 +30,32 @@ export default function App() {
   }
 
   function deleteTask(taskId:number) {
-    console.log(`Deletando a task: ${taskId}`)
     const tasksWithoutDeletedOne = allTaskObj.filter(task => {
       return task.id !== taskId
     })
     setAllTaskObj(tasksWithoutDeletedOne)
+  }
+
+  
+  function completedTask(taskId: number) {
+    const completedTaskById = allTaskObj.map((task) => {
+      if (task.id === taskId) {
+        return { ...task, done: !task.done };
+      }
+      return task;
+    });
+    setAllTaskObj(completedTaskById);
+    countCompletedTask(completedTaskById)
+  }
+
+  function countCompletedTask(completedTaskById: any){
+    let count = 0 
+    completedTaskById.map((task:any) => {
+      if (task.done === true) {
+        count++;
+      }
+    })
+    setTasksCompleted(count)
   }
 
   return (
@@ -56,8 +78,8 @@ export default function App() {
             type='submit' 
           />
         </form>
-          <Status created={allTaskObj.length} completed={0}/>
-          <Tasks newTask={allTaskObj} onDeleteTask={deleteTask}/>
+          <Status created={allTaskObj.length} completed={tasksCompleted}/>
+          <Tasks newTask={allTaskObj} onDeleteTask={deleteTask} onCompleted={completedTask}/>
       </div>
     </div>
   )
